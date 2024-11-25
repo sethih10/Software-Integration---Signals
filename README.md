@@ -14,8 +14,3 @@ Reset - It clears the plots and gives the option to again choosing loading file 
 Start Recording 
 Save Recording 
 Compare loaded file/last recording - It tells the name of the file played from the database by using fft similar to shazam (please see the matching_sounds.py) script. On clicking this button, it tells the name of the song played by the last loaded file or the sound heard in the microphone if you use the option of recording. 
-
-There is .exe file as well as all the scripts.
-
-.exe file is in the assignment1_exe.zip
-.py files are in the assignment1_py.zip
