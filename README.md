@@ -1,21 +1,40 @@
-
 # Software Integration - Signals
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg) ![PyQt](https://img.shields.io/badge/PyQt-5.15.4-green.svg) ![NumPy](https://img.shields.io/badge/NumPy-1.21.0-orange.svg) ![SciPy](https://img.shields.io/badge/SciPy-1.7.0-brightgreen.svg)
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg) ![PyQt](https://img.shields.io/badge/PyQt-5.15.4-green.svg) ![NumPy](https://img.shields.io/badge/NumPy-1.21.0-orange.svg) ![SciPy](https://img.shields.io/badge/SciPy-1.7.0-brightgreen.svg) ![PyAudio](https://img.shields.io/badge/PyAudio-0.2.14-blue.svg)
+
 
 ## Overview
 This project is focused on integrating software tools for processing and analyzing audio signals. It includes functionalities for working with audio data, implementing signal processing techniques, and providing a graphical user interface (GUI) for ease of interaction.
 
 ## Repository Structure
 
-- **assignment1.py**: A Python script implementing core functionalities related to signal processing and analysis.
+- **assignment1.py**: The main script to run the audio player, featuring:
+  - Capabilities equivalent to Shazam for identifying audio files.
+  - Visualization of the major frequency in a plot, along with its value and tone.
+  - User-friendly functionality with buttons for various operations (detailed below).
+- **matching_sounds.py**: A script for matching an unknown audio file with a predefined database of audio samples. It creates a unique "fingerprint" of the audio using mel-spectrogram features and compares it against a set of database fingerprints.
 - **database/**: A folder containing audio files (`.wav`) used as input data for processing.
+- **soundcardlib.py**: A Python module providing real-time audio streaming and recording capabilities, using PyAudio to manage audio data in chunks.
 - **final_GUI.ui**: A Qt Designer file defining the graphical user interface for the application.
-- **README.md**: Documentation for understanding the project, its structure, and usage.
+- **requirements.txt**: A file listing the required Python libraries for the project.
+
 
 ## Features
-- Audio signal processing using provided `.wav` files.
-- User-friendly GUI for interacting with the application.
-- Modular structure for ease of updates and integration with additional features.
+### Audio Player and Signal Analysis
+- Load `.wav` files for analysis.
+- Start, stop, and resume audio playback, applicable for both recordings and loaded files.
+- Reset functionality to clear plots and reload files or start a new recording.
+- Record audio and save recordings directly from the application.
+- Compare loaded files or the last recording against the database using FFT (see `matching_sounds.py`).
+  - Identifies the name of the audio file played or recorded, similar to Shazam.
+
+### GUI Features
+- Buttons include:
+  - **Load Wav File**: Load a `.wav` file for playback and analysis.
+  - **Stop/Resume**: Control playback of recordings or loaded files.
+  - **Reset**: Clear plots and reload the application interface.
+  - **Start Recording**: Record audio from the microphone.
+  - **Save Recording**: Save the recorded audio.
+  - **Compare Loaded File/Last Recording**: Identify the name of the audio file or recorded sound.
 
 ## Prerequisites
 - Python 3.8 or higher.
@@ -31,38 +50,16 @@ This project is focused on integrating software tools for processing and analyzi
    ```bash
    cd Software-Integration---Signals-main
    ```
-3. Run the Python script:
+3. Install the required libraries:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the Python script:
    ```bash
    python assignment1.py
    ```
-4. Launch the GUI using the `.ui` file with Qt Designer or a Python UI framework like PyQt/PySide.
+5. Launch the GUI using the `.ui` file with Qt Designer or a Python UI framework like PyQt/PySide.
 
 ## Database
 The `database/` folder contains audio files in `.wav` format. These files are used as input for signal processing and testing the application.
 
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request with a detailed description of your changes.
-
-## License
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the license terms.
-
-## Contact
-For any questions or feedback, please contact the repository owner.
-
-Assignment 1 (Task 3)
-
-
-Assignment1.py  is the main script to run the audio player which has capability equivalent to Shazam as well as print the major frequency in the plot and it's value and the tone. It is fairly easy to use.
-
-The button includes - 
-
-
-Load Wav file
-Stop, Resume - This work for both the recordings as well as loaded files 
-Reset - It clears the plots and gives the option to again choosing loading file or starting recording
-Start Recording 
-Save Recording 
-Compare loaded file/last recording - It tells the name of the file played from the database by using fft similar to shazam (please see the matching_sounds.py) script. On clicking this button, it tells the name of the song played by the last loaded file or the sound heard in the microphone if you use the option of recording. 
