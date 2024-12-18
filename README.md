@@ -7,13 +7,13 @@ This project is focused on integrating software tools for processing and analyzi
 
 ## Repository Structure
 
-- **assignment1.py**: The main script to run the audio player, featuring:
+- **main.py**: The main script to run the audio player, featuring:
   - Capabilities equivalent to Shazam for identifying audio files.
   - Visualization of the major frequency in a plot, along with its value and tone.
   - User-friendly functionality with buttons for various operations (detailed below).
 - **matching_sounds.py**: A script for matching an unknown audio file with a predefined database of audio samples. It creates a unique "fingerprint" of the audio using mel-spectrogram features and compares it against a set of database fingerprints.
-- **database/**: A folder containing audio files (`.wav`) used as input data for processing.
 - **soundcardlib.py**: A Python module providing real-time audio streaming and recording capabilities, using PyAudio to manage audio data in chunks.
+- **database/**: A folder containing audio files (`.wav`) used as input data for processing.
 - **final_GUI.ui**: A Qt Designer file defining the graphical user interface for the application.
 - **requirements.txt**: A file listing the required Python libraries for the project.
 
@@ -56,9 +56,8 @@ This project is focused on integrating software tools for processing and analyzi
    ```
 4. Run the Python script:
    ```bash
-   python assignment1.py
+   python main.py
    ```
-5. Launch the GUI using the `.ui` file with Qt Designer or a Python UI framework like PyQt/PySide.
 
 ## Database
 The `database/` folder contains audio files in `.wav` format. These files are used as input for signal processing and testing the application.
